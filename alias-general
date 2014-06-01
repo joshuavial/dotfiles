@@ -1,18 +1,3 @@
-# GIT
-alias git=hub
-alias gst='git status'
-alias gc='git commit'
-alias gca='git commit -a'
-alias ga='git add'
-alias gph='git push'
-alias gpl='git pull'
-alias gco='git checkout'
-alias gb='git branch'
-alias gch='git cherry-pick'
-alias gcp='git checkout production'
-alias gcm='git checkout master'
-alias gcs='git checkout staging'
-
 # General
 alias l='ls -lahG'
 alias h='history' 
