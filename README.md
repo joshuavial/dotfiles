@@ -1,2 +1,8 @@
 dotfiles
 ========
+
+### Usage
+
+```
+./link.sh
+```
