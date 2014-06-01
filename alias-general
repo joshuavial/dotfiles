@@ -1,0 +1,32 @@
+# GIT
+alias git=hub
+alias gst='git status'
+alias gc='git commit'
+alias gca='git commit -a'
+alias ga='git add'
+alias gph='git push'
+alias gpl='git pull'
+alias gco='git checkout'
+alias gb='git branch'
+alias gch='git cherry-pick'
+alias gcp='git checkout production'
+alias gcm='git checkout master'
+alias gcs='git checkout staging'
+
+# General
+alias l='ls -lahG'
+alias h='history' 
+alias hg='history|grep'
+alias c='clear' 
+alias ll='ls -l';
+alias v='vi'
+alias clear_dns='dscacheutil -flushcache'
+
+# RAILS
+alias rac='rails_apps_composer'
+alias rn='rails new'
+alias rc='rails console'
+alias rs='rails server'
+alias rg='rails generate'
+alias rd='rails destroy' 
+alias rdb='rails dbconsole'
