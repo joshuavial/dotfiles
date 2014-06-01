@@ -1,9 +1,9 @@
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 export PATH="~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/local/pgsql/bin:/usr/local/share/npm/bin/:/usr/local/ElasticLoadBalancing-1.0.34.0/bin/:$PATH"
-export EDITOR="/usr/bin/vi"
+export EDITOR="/usr/bin/vim"
 export PHANTOMJS_BIN="/Users/joshua/.rvm/bin/phantomjs"
 
-export SVN_EDITOR=vi
-export BUNDLER_EDITOR='vi'
+export SVN_EDITOR="/usr/bin/vim"
+export BUNDLER_EDITOR='/usr/bin/vim'
 export RUBYOPT="rubygems"
