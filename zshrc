@@ -73,8 +73,8 @@ export PATH="/Users/joshua/.rvm/gems/ruby-2.0.0-p195/bin:/Users/joshua/.rvm/gems
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-source dotfiles/env-vars
-source dotfiles/alias-general
-source dotfiles/alias-projects
-source dotfiles/private
+source ~/dotfiles/env-vars
+source ~/dotfiles/alias-general
+source ~/dotfiles/alias-projects
+source ~/dotfiles/private
 
