@@ -74,5 +74,6 @@ export PATH="/Users/joshua/.rvm/gems/ruby-2.0.0-p195/bin:/Users/joshua/.rvm/gems
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 source .alias-general
+source .alias-projects
 source .shared_profile
 
