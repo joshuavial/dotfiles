@@ -41,6 +41,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'geekjuice/vim-spec'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'tpope/vim-dispatch'
+Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'Lokaltog/vim-distinguished'
 
