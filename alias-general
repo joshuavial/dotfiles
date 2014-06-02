@@ -15,3 +15,6 @@ alias rs='rails server'
 alias rg='rails generate'
 alias rd='rails destroy' 
 alias rdb='rails dbconsole'
+
+#tmux with 256 colours
+alias tmux='TERM=xterm-256color tmux'
