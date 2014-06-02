@@ -40,7 +40,6 @@ Plugin 'kchmck/vim-coffee-script'
 
 Plugin 'geekjuice/vim-spec'
 Plugin 'jgdavey/tslime.vim'
-Plugin 'tpope/vim-dispatch'
 Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'Lokaltog/vim-distinguished'
@@ -121,14 +120,22 @@ noremap <tab> <c-w><c-w>
 " Switch between last two buffers
 nnoremap <leader><leader> <C-^>
 
+" Yank text to the OS X clipboard
+noremap <leader>y "*y
+noremap <leader>yy "*Y
+
+" Preserve indentation while pasting text from the OS X clipboard
+noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+
 " vim-spec
 map <BS> :call RunCurrentSpecFile()<CR>
 map \ :call RunNearestSpec()<CR>
 map <CR> :call RunLastSpec()<CR>
 map <leader>a :call RunAllSpecs()<CR>
-let g:rspec_command = 'Dispatch bundle exec rspec {spec}'
-let g:mocha_js_command = 'Dispatch mocha --recursive {spec}'
-let g:mocha_coffee_command = 'Dispatch mocha -b --compilers coffee:coffee-script/register {spec}'
+
+let g:rspec_command = ':call Send_to_Tmux("bundle exec rspec {spec}\n")'
+let g:mocha_js_command = ':call Send_to_Tmux("mocha --recursive {spec}\n")'
+let g:mocha_coffee_command = ':call Send_to_Tmux("mocha -b --compilers coffee:coffee-script/register {spec}\n")'
 
 " NERDTree
 nmap <leader>n :NERDTreeToggle<CR>
