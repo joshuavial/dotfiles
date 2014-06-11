@@ -76,7 +76,7 @@ set synmaxcol=128
 set ttyscroll=10
 set encoding=utf-8
 set tabstop=2
-set nowrap
+set wrap
 set number
 set expandtab
 set nowritebackup
@@ -131,7 +131,9 @@ noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 map <BS> :call RunCurrentSpecFile()<CR>
 map \ :call RunNearestSpec()<CR>
 map <CR> :call RunLastSpec()<CR>
-map <leader>a :call RunAllSpecs()<CR>
+map <leader>s :call RunAllSpecs()<CR>
+map <leader>a :call Send_to_Tmux("rake\n")<CR>
+map <leader>g :call Send_to_Tmux("grunt test\n")<CR>
 
 let g:rspec_command = ':call Send_to_Tmux("bundle exec rspec {spec}\n")'
 let g:mocha_js_command = ':call Send_to_Tmux("mocha --recursive {spec}\n")'
