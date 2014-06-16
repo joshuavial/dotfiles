@@ -52,9 +52,6 @@ plugins=(git osx ruby rails node bundler brew tmux)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-export PATH="/Users/joshua/.rvm/gems/ruby-2.0.0-p195/bin:/Users/joshua/.rvm/gems/ruby-2.0.0-p195@global/bin:/Users/joshua/.rvm/rubies/ruby-2.0.0-p195/bin:/Users/joshua/.rvm/bin:~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/local/pgsql/bin:/usr/local/share/npm/bin/:/usr/local/ElasticLoadBalancing-1.0.34.0/bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -72,6 +69,9 @@ export PATH="/Users/joshua/.rvm/gems/ruby-2.0.0-p195/bin:/Users/joshua/.rvm/gems
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+#setup rbenv autocomplete
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 source ~/dotfiles/env-vars
 source ~/dotfiles/alias-general
