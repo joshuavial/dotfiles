@@ -70,11 +70,10 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-#setup rbenv autocomplete
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
 source ~/dotfiles/env-vars
 source ~/dotfiles/alias-general
 source ~/dotfiles/alias-projects
 source ~/dotfiles/private
 
+#setup rbenv autocomplete
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
