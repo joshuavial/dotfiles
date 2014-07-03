@@ -130,7 +130,7 @@ noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 " vim-spec
 map <BS> :call RunCurrentSpecFile()<CR>
 map \ :call RunNearestSpec()<CR>
-map <CR> :call RunLastSpec()<CR>
+map <CR><CR> :call RunLastSpec()<CR>
 map <leader>s :call RunAllSpecs()<CR>
 map <leader>a :call Send_to_Tmux("rake\n")<CR>
 map <leader>g :call Send_to_Tmux("grunt test\n")<CR>
