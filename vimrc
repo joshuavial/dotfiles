@@ -38,7 +38,8 @@ Plugin 'tpope/vim-cucumber'
 Plugin 'moll/vim-node'
 Plugin 'kchmck/vim-coffee-script'
 
-Plugin 'geekjuice/vim-spec'
+"Plugin 'geekjuice/vim-spec'
+Plugin 'joshuavial/vim-spec'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 
@@ -78,7 +79,6 @@ set encoding=utf-8
 set tabstop=2
 set wrap
 set number
-set expandtab
 set nowritebackup
 set noswapfile
 set nobackup
@@ -128,16 +128,21 @@ noremap <leader>yy "*Y
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
 " vim-spec
-map <BS> :call RunCurrentSpecFile()<CR>
-map \ :call RunNearestSpec()<CR>
-map <CR><CR> :call RunLastSpec()<CR>
+nmap <BS> :call RunCurrentSpecFile()<CR>
+nmap \ :call RunNearestSpec()<CR>
+nmap <CR> :call RunLastSpec()<CR>
 map <leader>s :call RunAllSpecs()<CR>
 map <leader>a :call Send_to_Tmux("rake\n")<CR>
 map <leader>g :call Send_to_Tmux("grunt test\n")<CR>
+nmap ` :call Send_to_Tmux("npm test\n")<CR>
 
 let g:rspec_command = ':call Send_to_Tmux("bundle exec rspec {spec}\n")'
 let g:mocha_js_command = ':call Send_to_Tmux("mocha --recursive {spec}\n")'
 let g:mocha_coffee_command = ':call Send_to_Tmux("mocha -b --compilers coffee:coffee-script/register {spec}\n")'
+
+" tmux shortcuts
+map <leader>b :call Send_to_Tmux("bundle\n")<CR>
+map <leader>c :call Send_to_Tmux("clear\n")<CR>
 
 " NERDTree
 nmap <leader>n :NERDTreeToggle<CR>
