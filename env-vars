@@ -1,7 +1,7 @@
 export PATH="~/.rbenv/shims:~/.rbenv/bin:~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/local/pgsql/bin:/usr/local/share/npm/bin:/usr/local/ElasticLoadBalancing-1.0.34.0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$PATH"
 
 export EDITOR="/usr/bin/vim"
-export PHANTOMJS_BIN="/Users/joshua/.rvm/bin/phantomjs"
+export PHANTOMJS_BIN="/usr/local/bin/phantomjs"
 
 export SVN_EDITOR="/usr/bin/vim"
 export BUNDLER_EDITOR='/usr/bin/vim'
