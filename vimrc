@@ -103,6 +103,9 @@ autocmd VimEnter * set nosc
 " format the entire file
 nmap <leader>fef ggVG=
 
+" reload current file
+nmap <leader>r :e!<CR>
+
 " Open new buffers
 nmap <leader>v  :rightbelow vsp<cr>
 nmap <leader>h   :rightbelow sp<cr>
@@ -138,7 +141,7 @@ nmap ` :call Send_to_Tmux("npm test\n")<CR>
 
 let g:rspec_command = ':call Send_to_Tmux("bundle exec rspec {spec}\n")'
 let g:mocha_js_command = ':call Send_to_Tmux("mocha --recursive {spec}\n")'
-let g:mocha_coffee_command = ':call Send_to_Tmux("mocha -b --compilers coffee:coffee-script/register {spec}\n")'
+let g:mocha_coffee_command = ':call Send_to_Tmux("mocha -b --recursive --compilers coffee:coffee-script/register {spec}\n")'
 
 " tmux shortcuts
 map <leader>b :call Send_to_Tmux("bundle\n")<CR>
