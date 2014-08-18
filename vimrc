@@ -143,6 +143,10 @@ let g:rspec_command = ':call Send_to_Tmux("bundle exec rspec {spec}\n")'
 let g:mocha_js_command = ':call Send_to_Tmux("mocha --recursive {spec}\n")'
 let g:mocha_coffee_command = ':call Send_to_Tmux("mocha -b --recursive --compilers coffee:coffee-script/register {spec}\n")'
 
+"switch to teaspoon
+nmap <leader>sp :let g:mocha_coffee_command = g:teaspoon_command<CR> :let g:mocha_js_command = g:teaspoon_command<CR>
+let g:teaspoon_command = ':call Send_to_Tmux("bundle exec rake teaspoon {spec}\n")'
+
 " tmux shortcuts
 map <leader>b :call Send_to_Tmux("bundle\n")<CR>
 map <leader>c :call Send_to_Tmux("clear\n")<CR>
@@ -161,7 +165,7 @@ nnoremap <silent> t :CtrlP<cr>
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 set wildignore+=node_modules
 let g:ctrlp_working_path_mode = 2
-let g:ctrlp_by_filename = 1
+"let g:ctrlp_by_filename = 1
 let g:ctrlp_max_files = 600
 let g:ctrlp_max_depth = 5
 
