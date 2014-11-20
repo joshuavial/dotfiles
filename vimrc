@@ -106,6 +106,9 @@ nmap <leader>fef ggVG=
 " reload current file
 nmap <leader>r :e!<CR>
 
+" quit current file
+nmap <leader>q :q<CR>
+
 " Open new buffers
 nmap <leader>v  :rightbelow vsp<cr>
 nmap <leader>h   :rightbelow sp<cr>
@@ -119,6 +122,11 @@ nnoremap <C-H> <C-W><C-H>
 
 " Tab between buffers
 noremap <tab> <c-w><c-w>
+
+"switch tabs
+nmap <leader>t :tabnew<CR>
+nmap <S-l> :tabnext<CR>
+nmap <S-h> :tabprevious<CR>
 
 " Switch between last two buffers
 nnoremap <leader><leader> <C-^>
@@ -139,9 +147,9 @@ map <leader>a :call Send_to_Tmux("rake\n")<CR>
 map <leader>g :call Send_to_Tmux("grunt test\n")<CR>
 nmap ` :call Send_to_Tmux("npm test\n")<CR>
 
-let g:rspec_command = ':call Send_to_Tmux("bundle exec rspec {spec}\n")'
-let g:mocha_js_command = ':call Send_to_Tmux("mocha --recursive {spec}\n")'
-let g:mocha_coffee_command = ':call Send_to_Tmux("mocha -b --recursive --compilers coffee:coffee-script/register {spec}\n")'
+let g:rspec_command = ':call Send_to_Tmux("VIM=1 bundle exec rspec {spec}\n")'
+let g:mocha_js_command = ':call Send_to_Tmux("NODE_ENV=test VIM=1 mocha --recursive {spec}\n")'
+let g:mocha_coffee_command = ':call Send_to_Tmux("NODE_ENV=test VIM=1 mocha -b --recursive --compilers coffee:coffee-script/register {spec}\n")'
 
 "switch to teaspoon
 nmap <leader>sp :let g:mocha_coffee_command = g:teaspoon_command<CR> :let g:mocha_js_command = g:teaspoon_command<CR>
@@ -161,7 +169,7 @@ let g:syntastic_mode_map = { 'mode': 'passive' }
 let g:syntastic_ruby_exec = '~/.rvm/rubies/ruby-2.0.0-p0/bin/ruby'
 
 " CtrlP
-nnoremap <silent> t :CtrlP<cr>
+"nnoremap <silent> t :CtrlP<cr>
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 set wildignore+=node_modules
 let g:ctrlp_working_path_mode = 2
