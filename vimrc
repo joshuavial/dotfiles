@@ -35,10 +35,12 @@ Plugin 'tpope/vim-rails'
 
 Plugin 'tpope/vim-cucumber'
 
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'moll/vim-node'
 Plugin 'kchmck/vim-coffee-script'
 
 "Plugin 'geekjuice/vim-spec'
+"Plugin 'file:///Users/joshua/projects/vim-spec'
 Plugin 'joshuavial/vim-spec'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'christoomey/vim-tmux-navigator'
@@ -147,6 +149,7 @@ map <leader>a :call Send_to_Tmux("rake\n")<CR>
 map <leader>g :call Send_to_Tmux("grunt test\n")<CR>
 nmap ` :call Send_to_Tmux("npm test\n")<CR>
 
+let g:npm_test_command = ':call Send_to_Tmux("TEST={spec} npm run vim-spec\n")'
 let g:rspec_command = ':call Send_to_Tmux("VIM=1 bundle exec rspec {spec}\n")'
 let g:mocha_js_command = ':call Send_to_Tmux("NODE_ENV=test VIM=1 mocha --recursive {spec}\n")'
 let g:mocha_coffee_command = ':call Send_to_Tmux("NODE_ENV=test VIM=1 mocha -b --recursive --compilers coffee:coffee-script/register {spec}\n")'
@@ -162,7 +165,8 @@ map <leader>c :call Send_to_Tmux("clear\n")<CR>
 " NERDTree
 nmap <leader>n :NERDTreeToggle<CR>
 let NERDTreeHighlightCursorline=1
-let NERDTreeIgnore = ['tmp', '.yardoc', 'pkg', 'node_modules']
+let NERDTreeIgnore = ['tmp', '.yardoc', 'pkg']
+"let NERDTreeIgnore = ['tmp', '.yardoc', 'pkg', 'node_modules']
 
 " Syntastic
 let g:syntastic_mode_map = { 'mode': 'passive' }
@@ -171,7 +175,7 @@ let g:syntastic_ruby_exec = '~/.rvm/rubies/ruby-2.0.0-p0/bin/ruby'
 " CtrlP
 "nnoremap <silent> t :CtrlP<cr>
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-set wildignore+=node_modules
+"set wildignore+=node_modules
 let g:ctrlp_working_path_mode = 2
 "let g:ctrlp_by_filename = 1
 let g:ctrlp_max_files = 600
