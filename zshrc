@@ -82,3 +82,6 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH="/usr/local/heroku/bin:$PATH"
 export LC_ALL=en_NZ.UTF-8
 export LANG=en_NZ.UTF-8
+
+source ~/.nvm/nvm.sh
+nvm use 0.12
