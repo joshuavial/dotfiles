@@ -152,6 +152,7 @@ nmap ` :call Send_to_Tmux("npm test\n")<CR>
 let g:npm_test_command = ':call Send_to_Tmux("TEST={spec} npm run vim-spec\n")'
 let g:rspec_command = ':call Send_to_Tmux("VIM=1 bundle exec rspec {spec}\n")'
 let g:mocha_js_command = ':call Send_to_Tmux("NODE_ENV=test VIM=1 mocha --recursive {spec}\n")'
+let g:cucumber_command = ':call Send_to_Tmux("VIM=1 cucumber {spec}\n")'
 let g:mocha_coffee_command = ':call Send_to_Tmux("NODE_ENV=test VIM=1 mocha -b --recursive --compilers coffee:coffee-script/register {spec}\n")'
 
 "switch to teaspoon
@@ -171,6 +172,7 @@ let NERDTreeIgnore = ['tmp', '.yardoc', 'pkg']
 " Syntastic
 let g:syntastic_mode_map = { 'mode': 'passive' }
 let g:syntastic_ruby_exec = '~/.rvm/rubies/ruby-2.0.0-p0/bin/ruby'
+let g:syntastic_javascript_checkers = ['standard']
 
 " CtrlP
 "nnoremap <silent> t :CtrlP<cr>
