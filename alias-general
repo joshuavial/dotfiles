@@ -23,3 +23,6 @@ alias wemux='TERM=xterm-256color wemux'
 
 #Mou
 alias mou='open -a Mou.app'
+
+alias vim='mvim -v'
+alias vi='mvim -v'
