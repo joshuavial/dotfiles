@@ -18,6 +18,7 @@ Plugin 'rking/ag.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'vim-scripts/matchit.zip'
 
+Plugin 'slim-template/vim-slim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 
@@ -38,6 +39,7 @@ Plugin 'tpope/vim-cucumber'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'moll/vim-node'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'mtscout6/vim-cjsx'
 
 "Plugin 'geekjuice/vim-spec'
 "Plugin 'file:///Users/joshua/projects/vim-spec'
@@ -155,6 +157,8 @@ let g:mocha_js_command = ':call Send_to_Tmux("NODE_ENV=test VIM=1 mocha --recurs
 let g:cucumber_command = ':call Send_to_Tmux("VIM=1 cucumber {spec}\n")'
 let g:mocha_coffee_command = ':call Send_to_Tmux("NODE_ENV=test VIM=1 mocha -b --recursive --compilers coffee:coffee-script/register {spec}\n")'
 
+map <leader>t :call Send_to_Tmux("rake cucumber:wip\n")<CR>
+
 "switch to teaspoon
 nmap <leader>sp :let g:mocha_coffee_command = g:teaspoon_command<CR> :let g:mocha_js_command = g:teaspoon_command<CR>
 let g:teaspoon_command = ':call Send_to_Tmux("bundle exec rake teaspoon {spec}\n")'
@@ -180,8 +184,8 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 "set wildignore+=node_modules
 let g:ctrlp_working_path_mode = 2
 "let g:ctrlp_by_filename = 1
-let g:ctrlp_max_files = 600
-let g:ctrlp_max_depth = 5
+let g:ctrlp_max_files = 20000
+let g:ctrlp_max_depth = 20
 
 "matchit 
 runtime macros/matchit.vim
