@@ -40,6 +40,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'moll/vim-node'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'mtscout6/vim-cjsx'
+Plugin 'elixir-lang/vim-elixir'
 
 "Plugin 'geekjuice/vim-spec'
 "Plugin 'file:///Users/joshua/projects/vim-spec'
