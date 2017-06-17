@@ -98,6 +98,7 @@ autocmd BufWritePre *.haml :%s/\s\+$//e
 autocmd BufWritePre *.html :%s/\s\+$//e
 autocmd BufWritePre *.scss :%s/\s\+$//e
 autocmd BufWritePre *.slim :%s/\s\+$//e
+autocmd BufWritePre *.js :%s/\s\+$//e
 
 au BufNewFile * set noeol
 au BufRead,BufNewFile *.go set filetype=go
@@ -182,7 +183,7 @@ let g:syntastic_javascript_checkers = ['standard']
 " CtrlP
 "nnoremap <silent> t :CtrlP<cr>
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-"set wildignore+=node_modules
+set wildignore+=node_modules
 let g:ctrlp_working_path_mode = 2
 "let g:ctrlp_by_filename = 1
 let g:ctrlp_max_files = 20000
