@@ -49,6 +49,7 @@ Plugin 'jgdavey/tslime.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'Lokaltog/vim-distinguished'
+Plugin 'maksimr/vim-jsbeautify'
 
 call vundle#end()            " required
 
@@ -153,9 +154,9 @@ map <leader>a :call Send_to_Tmux("rake\n")<CR>
 map <leader>g :call Send_to_Tmux("grunt test\n")<CR>
 nmap ` :call Send_to_Tmux("npm test\n")<CR>
 
-let g:npm_test_command = ':call Send_to_Tmux("TEST={spec} npm run vim-spec\n")'
+let g:npm_test_command = ':call Send_to_Tmux("jest {spec}\n")'
 let g:rspec_command = ':call Send_to_Tmux("VIM=1 bundle exec rspec {spec}\n")'
-let g:mocha_js_command = ':call Send_to_Tmux("NODE_ENV=test VIM=1 mocha --recursive {spec}\n")'
+let g:mocha_js_command = ':call Send_to_Tmux("NODE_ENV=test VIM=1 jest {spec}\n")'
 let g:cucumber_command = ':call Send_to_Tmux("VIM=1 cucumber {spec}\n")'
 let g:mocha_coffee_command = ':call Send_to_Tmux("NODE_ENV=test VIM=1 mocha -b --recursive --compilers coffee:coffee-script/register {spec}\n")'
 
