@@ -49,7 +49,7 @@ Plugin 'jgdavey/tslime.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'Lokaltog/vim-distinguished'
-Plugin 'maksimr/vim-jsbeautify'
+Plugin 'Chiel92/vim-autoformat'
 
 call vundle#end()            " required
 
@@ -101,6 +101,8 @@ autocmd BufWritePre *.scss :%s/\s\+$//e
 autocmd BufWritePre *.slim :%s/\s\+$//e
 autocmd BufWritePre *.js :%s/\s\+$//e
 
+map <leader>a :Autoformat<CR>
+
 au BufNewFile * set noeol
 au BufRead,BufNewFile *.go set filetype=go
 
@@ -150,7 +152,6 @@ nmap <BS> :call RunCurrentSpecFile()<CR>
 nmap \ :call RunNearestSpec()<CR>
 nmap <CR> :call RunLastSpec()<CR>
 map <leader>s :call RunAllSpecs()<CR>
-map <leader>a :call Send_to_Tmux("rake\n")<CR>
 map <leader>g :call Send_to_Tmux("grunt test\n")<CR>
 nmap ` :call Send_to_Tmux("npm test\n")<CR>
 
