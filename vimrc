@@ -25,31 +25,21 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'honza/vim-snippets'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-rake'
-Plugin 'kana/vim-textobj-user'
-Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'tpope/vim-rails'
 
 Plugin 'tpope/vim-cucumber'
 
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'moll/vim-node'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'mtscout6/vim-cjsx'
 Plugin 'elixir-lang/vim-elixir'
 
-"Plugin 'geekjuice/vim-spec'
-"Plugin 'file:///Users/joshua/projects/vim-spec'
-Plugin 'joshuavial/vim-spec'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'Lokaltog/vim-distinguished'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'Quramy/tsuquyomi'
 
 call vundle#end()            " required
 
