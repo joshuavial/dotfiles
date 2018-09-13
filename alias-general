@@ -26,3 +26,6 @@ alias mou='open -a Mou.app'
 
 alias vim='mvim -v'
 alias vi='mvim -v'
+
+#trading wheels
+alias twc='/Users/joshua/workspace/trading-wheels/core/cli.js'
