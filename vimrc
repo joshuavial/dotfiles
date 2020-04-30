@@ -17,10 +17,12 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'vim-scripts/matchit.zip'
+Plugin 'mileszs/ack.vim'
 
 Plugin 'slim-template/vim-slim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 
 Plugin 'honza/vim-snippets'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -38,6 +40,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'Lokaltog/vim-distinguished'
 Plugin 'Chiel92/vim-autoformat'
+
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/tsuquyomi'
 
@@ -91,7 +94,7 @@ autocmd BufWritePre *.scss :%s/\s\+$//e
 autocmd BufWritePre *.slim :%s/\s\+$//e
 autocmd BufWritePre *.js :%s/\s\+$//e
 
-map <leader>a :Autoformat<CR>
+map <leader>f :Autoformat<CR>
 
 au BufNewFile * set noeol
 au BufRead,BufNewFile *.go set filetype=go
@@ -120,7 +123,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Tab between buffers
-noremap <tab> <c-w><c-w>
+"noremap <tab> <c-w><c-w>
 
 "switch tabs
 nmap <leader>t :tabnew<CR>
@@ -137,30 +140,6 @@ noremap <leader>yy "*Y
 " Preserve indentation while pasting text from the OS X clipboard
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
-" vim-spec
-nmap <BS> :call RunCurrentSpecFile()<CR>
-nmap \ :call RunNearestSpec()<CR>
-nmap <CR> :call RunLastSpec()<CR>
-map <leader>s :call RunAllSpecs()<CR>
-map <leader>g :call Send_to_Tmux("grunt test\n")<CR>
-nmap ` :call Send_to_Tmux("npm test\n")<CR>
-
-let g:npm_test_command = ':call Send_to_Tmux("jest {spec}\n")'
-let g:rspec_command = ':call Send_to_Tmux("VIM=1 bundle exec rspec {spec}\n")'
-let g:mocha_js_command = ':call Send_to_Tmux("NODE_ENV=test VIM=1 jest {spec}\n")'
-let g:cucumber_command = ':call Send_to_Tmux("VIM=1 cucumber {spec}\n")'
-let g:mocha_coffee_command = ':call Send_to_Tmux("NODE_ENV=test VIM=1 mocha -b --recursive --compilers coffee:coffee-script/register {spec}\n")'
-
-map <leader>t :call Send_to_Tmux("rake cucumber:wip\n")<CR>
-
-"switch to teaspoon
-nmap <leader>sp :let g:mocha_coffee_command = g:teaspoon_command<CR> :let g:mocha_js_command = g:teaspoon_command<CR>
-let g:teaspoon_command = ':call Send_to_Tmux("bundle exec rake teaspoon {spec}\n")'
-
-" tmux shortcuts
-map <leader>b :call Send_to_Tmux("bundle\n")<CR>
-map <leader>c :call Send_to_Tmux("clear\n")<CR>
-
 " NERDTree
 nmap <leader>n :NERDTreeToggle<CR>
 let NERDTreeHighlightCursorline=1
@@ -171,15 +150,32 @@ let NERDTreeIgnore = ['tmp', '.yardoc', 'pkg']
 let g:syntastic_mode_map = { 'mode': 'passive' }
 let g:syntastic_ruby_exec = '~/.rvm/rubies/ruby-2.0.0-p0/bin/ruby'
 let g:syntastic_javascript_checkers = ['standard']
+let g:syntastic_typescript_tsc_fname = ''
 
 " CtrlP
 "nnoremap <silent> t :CtrlP<cr>
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+"let g:ctrlp_custom_ignore = '(\v[\/]\.(git|hg|svn)$)'
+let g:ctrlp_custom_ignore = '\v(\.git|\.hg|\.svn|dist\/.*)$'
 set wildignore+=node_modules
 let g:ctrlp_working_path_mode = 2
 "let g:ctrlp_by_filename = 1
 let g:ctrlp_max_files = 20000
 let g:ctrlp_max_depth = 20
+
+" Ack
+let g:ackprg = 'ag --vimgrep --smart-case --ignore "dist/*" --ignore yarn.lock --ignore package-lock.json'                                                   
+cnoreabbrev ag Ack                                                                           
+cnoreabbrev aG Ack                                                                           
+cnoreabbrev Ag Ack                                                                           
+cnoreabbrev AG Ack  
+
+map <leader>a :Ack!<Space>
+
+let g:tsuquyomi_use_local_typescript = 1
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = '--lib es2019'
+"let g:tsuquyomi_disable_quickfix = 1
+"let g:syntastic_typescript_checkers = ['tsuquyomi']
 
 "matchit 
 runtime macros/matchit.vim

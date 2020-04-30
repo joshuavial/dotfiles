@@ -93,11 +93,16 @@ export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
 export ANDROID_HOME="/usr/local/share/android-sdk"
 export PATH="$ANDROID_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"
 export PATH=/usr/local/opt/python/libexec/bin:"$PATH"
-export GOPATH=/Users/joshua/workspace/go
-export PATH="$GOPATH/bin:$PATH"
-export GOVERSION=$(brew list go | head -n 1 | cut -d '/' -f 6)
-export GOROOT=$(brew --prefix)/Cellar/go/${GOVERSION}/libexec
+#export GOPATH=/Users/joshua/workspace/go
+#export PATH="$GOPATH/bin:$PATH"
+#export GOVERSION=$(brew list go | head -n 1 | cut -d '/' -f 6)
+#export GOROOT=$(brew --prefix)/Cellar/go/${GOVERSION}/libexec
 export PATH=/Applications/calibre.app/Contents/MacOS/:"$PATH"
 export PATH=/Users/joshua/.local/bin:"$PATH"
+export PATH=$HOME/.cargo/bin:"$PATH"
 
+#add ssh key for ssh agent
+ssh-add -K ~/.ssh/id_rsa
 
+#vim key binding
+bindkey -v 

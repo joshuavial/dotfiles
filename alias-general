@@ -24,8 +24,8 @@ alias wemux='TERM=xterm-256color wemux'
 #Mou
 alias mou='open -a Mou.app'
 
-alias vim='mvim -v'
-alias vi='mvim -v'
+#alias vim='mvim -v'
+#alias vi='mvim -v'
 
 #trading wheels
 alias twc='/Users/joshua/workspace/trading-wheels/core/cli.js'
